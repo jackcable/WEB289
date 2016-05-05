@@ -1,11 +1,10 @@
-
 <footer>
     <div class="footerWrapper">
         <div class="footer">
         <div class="footerNav">
   <ul>
-    <li><a href="index.php" class="homeLink">home</a></li>
-    <li><a href="music/music.php" class="musicLink">music</a></li>
+    <li><a href="/tuneorater/index.php" class="homeLink">Home</a></li>
+    <li><a href="/tuneorater/contact.php" class="contact">TuneOrater</a></li>
   </ul>
 </div>
     <div class="footerMain">

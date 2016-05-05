@@ -1,13 +1,11 @@
 <?php 
-if(isset($_SESSION['admin'])) { 
-    require_once('../util/valid_admin.php');
-    include'../view/admin_header.php';
-}else if(!isset($_SESSION['admin'])){
-  include'../view/header.php';  
-}
+require_once('../util/valid_admin.php');
+include('../view/admin_header.php');
+include('../util/secure_conn.php');
 ?>
-<div class="mainWrapper">
-<div class="slider">
+<div class="mainWrapper"> 
+    <div class="columnWrapper">
+    <div class="slider">
            <div id='coin-slider'>
       <a href="/tuneorater/img/tunorater.png" target="_blank">
         <img src='/tuneorater/img/tuneorater.png' >
@@ -40,22 +38,18 @@ if(isset($_SESSION['admin'])) {
     $('#coin-slider').coinslider();
   });
 </script>
+
         <!-- main content goes here -->
         <div class="conNotes">
-			<h2>Error</h2>
-
-			<!-- show errors if variable is passed -->
-			<?php 
-				if(!empty($error)){
-					echo $error; 
-				}else{
-					echo'Return to home.';
-				}
-			?>
-        </div><!-- end main article -->
-        </div>
+            <main>
+				<h2>Administrator Login is Successful!</h2>
+				<p>You are logged in as <?php echo $_SESSION['admin_firstName']; ?>.</p>
+				<p>Go to the Administrators Management <a href="../admin/index.php">Page</a></p>	
+			</main>
+        </div><!-- end main div -->
 
 
-<!-- end content wrapper -->
-
+</div><!-- end content wrapper -->
+</div>
 <?php include'../view/footer.php'; ?>
+  

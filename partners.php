@@ -1,11 +1,4 @@
-<?php 
-if(isset($_SESSION['admin'])) { 
-    require_once('../util/valid_admin.php');
-    include'../view/admin_header.php';
-}else if(!isset($_SESSION['admin'])){
-  include'../view/header.php';  
-}
-?>
+<?php include '/view/header.php'; ?>
 <div class="mainWrapper">
 <div class="slider">
            <div id='coin-slider'>
@@ -40,22 +33,13 @@ if(isset($_SESSION['admin'])) {
     $('#coin-slider').coinslider();
   });
 </script>
-        <!-- main content goes here -->
-        <div class="conNotes">
-			<h2>Error</h2>
+  <div class="conNotes">
+  <p>Under Construction: </p>
+  </div>
 
-			<!-- show errors if variable is passed -->
-			<?php 
-				if(!empty($error)){
-					echo $error; 
-				}else{
-					echo'Return to home.';
-				}
-			?>
-        </div><!-- end main article -->
-        </div>
+<h1>Contact Us</h1>
+<p>We are always happy to hear from you!</p>>
+<p>Please feel free to email us at: tuneorater@yahoo.com</p>
 
 
-<!-- end content wrapper -->
-
-<?php include'../view/footer.php'; ?>
+<?php include '/view/footer.php'; ?>

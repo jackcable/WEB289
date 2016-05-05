@@ -1,3 +1,6 @@
+<?php 
+ include('../util/valid_admin.php');
+?>
 <!doctype html>
 <html>
 <head>
@@ -14,31 +17,33 @@
 <body>
 <div class="wrapper">
 	<nav role="custom-dropdown">
-
-		
-		
-		<ul >
-			<li><a href="/TuneOrater/index.php">Home</a></li>
-			<li><a href="/TuneOrater/login/">Login/Register</a></li>
-			<li><a href="/TuneOrater/catalog/">Music Catalog</a></li>
+		<!-- fix for ios -->
+				<ul >	
+			<li><a href="/TuneOrater/admin/">Admin Home</a></li>
+			<li><a href="/TuneOrater/catalog/">Catalog of Music</a></li>
 		</ul>
+		
 	</nav>
-
 	<header class="publicHeader">
-		<div class="banner">
+	<div class="banner">
 <img src="/TuneOrater/img/logo.png" alt="TuneOrater" class="logo">
 </div>
-
-    <div class="headWrapper">
+	
+	<div class="headWrapper">
         <div class="header">
             <div class="headerMain">
-    <h1>Tune-O-Rater</h1>
-    <p>The place to vote on music!</p>
-            </div>
-	</div>
-
-<div class="container">
-		
+		<h1>TuneOrater</h1>
+		<p>The place to vote on music!</p>
+            
+		<div class="nav-admin-login">
+			<p>You are <?php echo $_SESSION['admin_firstName'] ; ?> logged in as <?php echo $_SESSION['admin_userName']; ?>.</p>
+	 		<form action="/TuneOrater/index.php" method="post">
+	            <input type="hidden" name="action" value="logout">
+	            <input class="button" type="submit" value="Logout">
+	        </form>
+	        </div>
+	    </div>
 	</header>
+	
 
-			
+		

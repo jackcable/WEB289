@@ -1,13 +1,47 @@
-<?php
-require('model/database.php');
-?>
-<div class="wrapper">
 <?php include 'view/header.php'; ?>
-
+<?php if(!empty($_SESSION['admin'])) {
+  header('Location: ./login/index.php');
+} else if (!empty($_SESSION['member'])){
+  header('Location: ./login/index.php');
+}
+?>
 <main>
 
-
 <div class="mainWrapper">
+
+<div class="slider">
+           <div id='coin-slider'>
+      <a href="img/tunorater.png" target="_blank">
+        <img src='img/tuneorater.png' >
+        <span>
+          Tune-O-Rater
+        </span>
+      </a>
+      <a href="img/Rock.png">
+        <img src='img/Rock.png' >
+        <span>
+          Rock
+        </span>
+      </a>
+      <a href="img/pop.png">
+        <img src='img/pop.png' >
+        <span>
+          Pop
+        </span>
+      </a>
+      <a href="img/country.png">
+        <img src='img/country.png' >
+        <span>
+          Country
+        </span>
+      </a>
+    </div>
+    </div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#coin-slider').coinslider();
+  });
+</script>
 <div class="main">
 <h1>About Tune-O-Rater</h1>
 <p>Tune-O-Rater is the brain child of Jack Jordan. This Web site is designed as a final project for my WEB-289 class at Asheville Buncombe Community College.  The reason I chose this website is because I love music, and believe there are many like minded people in the world.</p>
@@ -33,8 +67,8 @@ src="http://www.freshcontent.net/music_news_feed.php"></script>
 
 <div class="sidebar">
   <ul class="sidenav">
-    <li><a href="#" class="contactLink">Contact Us</a></li>
-    <li><a href="#" class="Partners"> Partners</a></li>
+    <li><a href="/tuneorater/contact.php" class="contactLink">Contact Us</a></li>
+    <li><a href="/tuneorater/partners.php" class="Partners"> Partners</a></li>
     </ul>
   <p>"For Those About To Rock (We Salute You)"
 
@@ -87,7 +121,6 @@ And those on the make
 We salute you
 We salute you
 We salute you
-
 Fire</p>
   <p>AC/DC &copy; 1981</p>
 </div>
@@ -95,4 +128,3 @@ Fire</p>
 </main>
 
 <?php include 'view/footer.php'; ?>
-</div>
